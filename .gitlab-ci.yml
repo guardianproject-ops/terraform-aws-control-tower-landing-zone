@@ -1,11 +1,3 @@
-image: python:latest
-
-stages:
-  - test
-
-test:lint:
-  stage: test
-  script:
-    - make init
-    - make lint                   ## Run Terraform linters and validation
-
+---
+include:
+  - https://gitlab.com/guardianproject-ops/projects/terraform_templates/tf-module.gitlab-ci.yml
