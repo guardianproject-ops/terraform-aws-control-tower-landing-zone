@@ -15,5 +15,5 @@ output "log_archive_account_id" {
 
 output "manifest" {
   description = "The manifest configuration used to create the Control Tower landing zone"
-  value       = aws_controltower_landing_zone.zone.manifest
+  value       = aws_controltower_landing_zone.zone.manifest_json
 }

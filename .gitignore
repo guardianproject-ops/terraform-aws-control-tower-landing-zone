@@ -56,3 +56,4 @@ test/.terraform
 test/.terraform.lock.hcl
 test/terraform.tfvars
 test/
+.terraform.lock.hcl

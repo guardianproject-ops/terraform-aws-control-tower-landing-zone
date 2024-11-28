@@ -1,7 +1,6 @@
 locals {
   create_kms_key = var.existing_key_arn == ""
 }
-data "aws_organizations_organization" "main" {}
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 resource "aws_organizations_account" "log_archive" {
