@@ -225,11 +225,10 @@ resource "aws_iam_role_policy_attachment" "config_aggregator" {
 
 
 resource "aws_kms_key" "controltower" {
-  count                   = local.create_kms_key ? 1 : 0
-  description             = "The AWS Key used in AWS Control Tower for encryption and decryption in the landing zone"
-  enable_key_rotation     = true
-  deletion_window_in_days = 20
-  tags                    = module.this.tags
+  count               = local.create_kms_key ? 1 : 0
+  description         = "The AWS Key used in AWS Control Tower for encryption and decryption in the landing zone"
+  enable_key_rotation = true
+  tags                = module.this.tags
 }
 
 resource "aws_kms_key_policy" "controltower" {
