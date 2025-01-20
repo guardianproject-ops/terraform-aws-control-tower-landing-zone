@@ -67,7 +67,6 @@ variable "foundational_organizational_unit_name" {
 variable "governed_regions" {
   description = "A list of AWS regions to govern with AWS Control Tower. The region where you deploy the landing zone MUST always be included in this list."
   type        = list(string)
-  default     = ["us-east-1", "us-east-2"]
 }
 
 variable "kms_key_admins" {

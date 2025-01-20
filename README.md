@@ -185,7 +185,7 @@ The `Region deny control` can't be enabled via the AWS API, so it cannot be IaCe
 | <a name="input_environment"></a> [environment](#input\_environment) | ID element. Usually used for region e.g. 'uw2', 'us-west-2', OR role 'prod', 'staging', 'dev', 'UAT' | `string` | `null` | no |
 | <a name="input_existing_key_arn"></a> [existing\_key\_arn](#input\_existing\_key\_arn) | The ARN of an existing KMS key to use for AWS Control Tower. | `string` | `""` | no |
 | <a name="input_foundational_organizational_unit_name"></a> [foundational\_organizational\_unit\_name](#input\_foundational\_organizational\_unit\_name) | The name of the organizational unit to create in AWS Control Tower which houses the Audit and Log accounts | `string` | `"Core"` | no |
-| <a name="input_governed_regions"></a> [governed\_regions](#input\_governed\_regions) | A list of AWS regions to govern with AWS Control Tower. The region where you deploy the landing zone MUST always be included in this list. | `list(string)` | <pre>[<br/>  "us-east-1",<br/>  "us-east-2"<br/>]</pre> | no |
+| <a name="input_governed_regions"></a> [governed\_regions](#input\_governed\_regions) | A list of AWS regions to govern with AWS Control Tower. The region where you deploy the landing zone MUST always be included in this list. | `list(string)` | n/a | yes |
 | <a name="input_id_length_limit"></a> [id\_length\_limit](#input\_id\_length\_limit) | Limit `id` to this many characters (minimum 6).<br/>Set to `0` for unlimited length.<br/>Set to `null` for keep the existing setting, which defaults to `0`.<br/>Does not affect `id_full`. | `number` | `null` | no |
 | <a name="input_kms_key_admins"></a> [kms\_key\_admins](#input\_kms\_key\_admins) | A list of IAM users or roles that should be granted administrative access to the KMS key. | `list(string)` | `[]` | no |
 | <a name="input_kms_key_alias_name"></a> [kms\_key\_alias\_name](#input\_kms\_key\_alias\_name) | The alias to use for the KMS key used by AWS Control Tower. | `string` | `"control_tower_key"` | no |
@@ -254,7 +254,7 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 ## Copyright
 
-Copyright © 2021-2024 The Guardian Project
+Copyright © 2021-2025 The Guardian Project
 
 
 
@@ -325,7 +325,9 @@ us][website] to get support with using our projects.
 <!-- markdownlint-restore -->
 
   [abelxluck_homepage]: https://gitlab.com/abelxluck
-  [abelxluck_avatar]: https://gitlab.com/uploads/-/system/user/avatar/941123/avatar.png?width=130
+
+  [abelxluck_avatar]: https://secure.gravatar.com/avatar/0f605397e0ead93a68e1be26dc26481a?s=200&amp;d=identicon
+
 
 <!-- markdownlint-disable -->
   [website]: https://guardianproject.info/?utm_source=gitlab&utm_medium=readme&utm_campaign=guardianproject-ops/terraform-aws-control-tower-landing-zone&utm_content=website
