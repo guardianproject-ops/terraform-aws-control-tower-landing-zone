@@ -88,13 +88,18 @@ module "control_tower_landing_zone" {
 
 You should be able to import your existing landing zone using this module without ANY changes/deletions when executing the apply.
 
-1. Simply use the included `generate_imports.sh` script to generate a terraform file that will do the imports.
+1. Use the [`generate_imports.py`][generate_imports] script included in our [`terraform-aws-account-baseline-root`][baseline-root] module
+    * You might need to edit the script to fit your use case and org setup, that's fine, it's a one off thing.
+    * That script also generates imports for our baseline root module, if you aren't using that then you should delete those extra imports
 2. Use the generated file along with a module statement like outlined previously as the basis for your terraform config
 3. Execute a terraform plan.
 4. Tweak imports and input variables, don't forget `existing_key_arn`
 5. Repeat 3 - 4 until there are zero modifications, creations (see exceptions), or deletions
 
-The exception to #5 is that the `aws_iam_role_policy_attachment` will be created, this is OK!
+[baseline-root]: https://gitlab.com/guardianproject-ops/terraform-aws-account-baseline-root
+[generate_imports]: https://gitlab.com/guardianproject-ops/terraform-aws-account-baseline-root/-/blob/main/generate_imports.py?ref_type=heads
+
+The exception to #5 is that the `aws_iam_role_policy_attachment` resource will be created, this is OK!
 
 If you see ANY changes/creations/deletions except 4x `aws_iam_role_policy_attachment` creations, then STOP and investigate.
 
@@ -167,7 +172,7 @@ The `Region deny control` can't be enabled via the AWS API, so it cannot be IaCe
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_access_logging_bucket_retention_days"></a> [access\_logging\_bucket\_retention\_days](#input\_access\_logging\_bucket\_retention\_days) | The number of days to retain log objects in the centralized access logging bucket. | `number` | `3650` | no |
+| <a name="input_access_logging_bucket_retention_days"></a> [access\_logging\_bucket\_retention\_days](#input\_access\_logging\_bucket\_retention\_days) | The number of days to retain log objects in the centralized access logging bucket. | `number` | `1095` | no |
 | <a name="input_account_name_audit"></a> [account\_name\_audit](#input\_account\_name\_audit) | The name of the account to use for audit. | `string` | `"Audit"` | no |
 | <a name="input_account_name_log_archiver"></a> [account\_name\_log\_archiver](#input\_account\_name\_log\_archiver) | The name of the account to use for centralized logging. | `string` | `"Log archive"` | no |
 | <a name="input_additional_organizational_unit_name"></a> [additional\_organizational\_unit\_name](#input\_additional\_organizational\_unit\_name) | The name of an additional organizational unit to create in AWS Control Tower. | `string` | `"Custom"` | no |

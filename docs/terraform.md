@@ -46,7 +46,7 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_access_logging_bucket_retention_days"></a> [access\_logging\_bucket\_retention\_days](#input\_access\_logging\_bucket\_retention\_days) | The number of days to retain log objects in the centralized access logging bucket. | `number` | `3650` | no |
+| <a name="input_access_logging_bucket_retention_days"></a> [access\_logging\_bucket\_retention\_days](#input\_access\_logging\_bucket\_retention\_days) | The number of days to retain log objects in the centralized access logging bucket. | `number` | `1095` | no |
 | <a name="input_account_name_audit"></a> [account\_name\_audit](#input\_account\_name\_audit) | The name of the account to use for audit. | `string` | `"Audit"` | no |
 | <a name="input_account_name_log_archiver"></a> [account\_name\_log\_archiver](#input\_account\_name\_log\_archiver) | The name of the account to use for centralized logging. | `string` | `"Log archive"` | no |
 | <a name="input_additional_organizational_unit_name"></a> [additional\_organizational\_unit\_name](#input\_additional\_organizational\_unit\_name) | The name of an additional organizational unit to create in AWS Control Tower. | `string` | `"Custom"` | no |
