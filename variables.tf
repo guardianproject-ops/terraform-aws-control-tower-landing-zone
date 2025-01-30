@@ -19,7 +19,7 @@ variable "email_address_account_log_archiver" {
 variable "access_logging_bucket_retention_days" {
   description = "The number of days to retain log objects in the centralized access logging bucket."
   type        = number
-  default     = 3650
+  default     = 1095
 }
 
 variable "account_name_audit" {
