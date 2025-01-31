@@ -11,6 +11,7 @@ resource "aws_organizations_account" "log_archive" {
 
   lifecycle {
     prevent_destroy = true
+    ignore_changes  = [name]
   }
 
   tags = module.this.tags
@@ -22,6 +23,7 @@ resource "aws_organizations_account" "audit" {
 
   lifecycle {
     prevent_destroy = true
+    ignore_changes  = [name]
   }
 
   tags = module.this.tags
